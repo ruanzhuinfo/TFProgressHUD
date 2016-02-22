@@ -1,9 +1,9 @@
 //
-//  DDShareProgressHUD.h
+//  TFProgressHUD.h
 //  daily
 //
 //  Created by taffy on 15/12/3.
-//  Copyright © 2015年 Zhihu. All rights reserved.
+//  Copyright © 2015年 taffy. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -11,7 +11,7 @@
 
 typedef void(^CompletionBlock)();
 
-@interface DDShareProgressHUD : UIView
+@interface TFProgressHUD : UIView
 
 @property (nonatomic, strong) UIView *maskView;
 @property (nonatomic, strong) ProgressIndicatorView *progressView;

@@ -1,28 +1,28 @@
 //
-//  DDShareProgressHUD.m
+//  TFProgressHUD.m
 //  daily
 //
 //  Created by taffy on 15/12/3.
-//  Copyright © 2015年 Zhihu. All rights reserved.
+//  Copyright © 2015年 taffy. All rights reserved.
 //
 
-#import "DDShareProgressHUD.h"
+#import "TFProgressHUD.h"
 
 #define WIDTH_SCREEN_RAW ([UIScreen mainScreen].bounds.size.width)
 #define HEIGHT_SCREEN_RAW ([UIScreen mainScreen].bounds.size.height)
 #define WIDTH_SCREEN (MIN(WIDTH_SCREEN_RAW, HEIGHT_SCREEN_RAW))
 #define HEIGHT_SCREEN (MAX(WIDTH_SCREEN_RAW, HEIGHT_SCREEN_RAW))
 
-@implementation DDShareProgressHUD {
+@implementation TFProgressHUD {
   
 }
 
 + (id) share {
-  static DDShareProgressHUD *HUD;
+  static TFProgressHUD *HUD;
   
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    HUD = [DDShareProgressHUD new];
+    HUD = [TFProgressHUD new];
     HUD.maskView = [[UIView alloc] initWithFrame:CGRectZero];
     HUD.progressView = [[ProgressIndicatorView alloc] init];
   });
@@ -60,7 +60,7 @@
     [self.maskView setAlpha:1.0];
   } completion:^(BOOL finished) {
     [UIView animateWithDuration:0.1
-                          delay:1.0
+                          delay:delayHide
                         options:UIViewAnimationOptionCurveEaseOut animations:^{
                           [self.maskView setAlpha:0];
                         } completion:^(BOOL finished) {
